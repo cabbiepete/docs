@@ -151,6 +151,8 @@ The method for fixing this issue depends on whether you are using an Intel based
 
 #### Non-Intel based processor
 
+Error message example: `CodeFragmentMetadata.cpp:48 instruction_extents_for_arm_address`
+
 1. Remove Pulumi - if you're using Homebrew, `brew remove pulumi` to remove Pulumi and `rm -rf ~/.pulumi` to remove plugins and templates.
 1. Download [latest version of Pulumi](/docs/install/versions/).
 1. Add Pulumi to path: `export PATH=$PATH:~/.pulumi/bin`
@@ -162,6 +164,9 @@ The method for fixing this issue depends on whether you are using an Intel based
 1. [Re-install Pulumi](/docs/install/)
 1. [Login to Pulumi](/docs/concepts/state#logging-into-and-out-of-state-backends).
 1. Run a Pulumi preview to check everything is ok: `pulumi pre`
+
+NB: removing plugins for each project is importantand worth doing again if pulumi is clearly arm64 but you still see an error. You can also remove by running `pulumi plugin rm --all`. 
+
 
 ### 409 conflict: Another update is currently in progress. {#conflict}
 
